@@ -9,3 +9,8 @@ from .models import Nike , Review
 
 class NikeList(generic.ListView):
     model = Nike
+
+
+
+class NikeDetail(generic.DeleteView):
+    model = Nike    
