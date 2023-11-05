@@ -1,9 +1,10 @@
+from collections.abc import Iterable
 from django.db import models
 from taggit.managers import TaggableManager
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.core.validators import MaxValueValidator,MinValueValidator
-
+from django.utils.text import slugify
 # Create your models here.
 
 
@@ -12,10 +13,17 @@ class Nike(models.Model):
     subtitle = models.TextField(max_length=30)
     price = models.FloatField()
     image = models.ImageField(upload_to='nike')
+    slug = models.SlugField(null=True,blank=True)
     tags = TaggableManager()
 
     def __str__(self):
         return self.name
+    
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)    
+        super(Courses, self).save(*args, **kwargs) 
+
 
 
 class Review(models.Model):
