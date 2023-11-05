@@ -22,7 +22,7 @@ class Nike(models.Model):
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)    
-        super(Courses, self).save(*args, **kwargs) 
+        super(Nike, self).save(*args, **kwargs) 
 
 
 
