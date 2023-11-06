@@ -278,7 +278,7 @@
 								</div>
 								<div class="col-6">
 									<div class="rating_list">
-										<h3>Based on 3 Reviews</h3>
+										<h3>Based on 1 Reviews</h3>
 										<ul class="list">
 											<li><a href="#">5 Star <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
 													 class="fa fa-star"></i><i class="fa fa-star"></i> 01</a></li>
@@ -303,11 +303,11 @@
 										</div>
 										<div class="media-body">
 											<h4>{{review.user}}</h4>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
+											<i class="fa fa-{% if nike.get_avg_rate.avg > 0 %}star{% endif %}"></i>
+											<i class="fa fa-{% if nike.get_avg_rate.avg > 1 %}star{% endif %}"></i>
+											<i class="fa fa-{% if nike.get_avg_rate.avg > 2 %}star{% endif %}"></i>
+											<i class="fa fa-{% if nike.get_avg_rate.avg > 3 %}star{% endif %}"></i>
+											<i class="fa fa-{% if nike.get_avg_rate.avg > 4 %}star{% endif %}"></i>
 										</div>
 									</div>
 									<p>{{review.comment}}</p>

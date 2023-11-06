@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 from django.core.validators import MaxValueValidator,MinValueValidator
 from django.utils.text import slugify
+from django.db.models.aggregates import Avg , Sum,Count
 # Create your models here.
 
 
@@ -24,8 +25,11 @@ class Nike(models.Model):
         self.slug = slugify(self.name)    
         super(Nike, self).save(*args, **kwargs) 
 
-
-
+   
+    def get_avg_rate(self):
+        avg = self.nike_review.aggregate(avg=Avg('rate'))
+        return avg
+    
 class Review(models.Model):
     user = models.ForeignKey(User,related_name='user_review',on_delete=models.SET_NULL,null=True,blank=True)
     nike = models.ForeignKey(Nike,related_name='nike_review',on_delete=models.SET_NULL,null=True,blank=True)
