@@ -9,6 +9,7 @@ from .models import Nike , Review
 
 class NikeList(generic.ListView):
     model = Nike
+    paginate_by = 8
 
 
 
