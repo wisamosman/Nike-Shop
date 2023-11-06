@@ -11,7 +11,7 @@ class Company(models.Model):
     fb_link = models.URLField(null=True,blank=True)
     android_link = models.URLField(null=True,blank=True)
     appstore_link = models.URLField(null=True,blank=True)
-    about_us = models.TextField(max_length=50)
+    about_us = models.TextField(max_length=500)
 
 
     def __str__(self):
