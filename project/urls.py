@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('nike/', include('nike.urls',namespace='nike')),
     path('settings/', include('settings.urls',namespace='settings')),
+    path('blog/', include('blog.urls',namespace='blog')),
     path('',home,name='home'),
 ]
 

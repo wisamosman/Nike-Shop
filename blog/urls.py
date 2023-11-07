@@ -1,9 +1,9 @@
 from django.urls import path
-from .views import NikeList, NikeDetail
+from .views import BlogList,BlogDetail
 
-app_name = 'nike'
+app_name = 'blog'
 
 urlpatterns = [
-    path('',NikeList.as_view(),name='nike_list'),
-    path('<slug:slug>',NikeDetail.as_view(),name='nike_detail'),
+    path('',BlogList.as_view(),name='blog_list'),
+    path('<slug:slug>',BlogDetail.as_view(),name='blog_detail'),
 ]
