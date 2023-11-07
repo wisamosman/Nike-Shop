@@ -19,3 +19,7 @@ class Blog(models.Model):
     def __str__(self):
         return self.name
     
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)    
+        super(Blog, self).save(*args, **kwargs)
