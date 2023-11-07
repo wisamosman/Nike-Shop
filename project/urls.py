@@ -18,11 +18,13 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
+from settings.views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('nike/', include('nike.urls',namespace='nike')),
     path('settings/', include('settings.urls',namespace='settings')),
+    path('',home,name='home'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
