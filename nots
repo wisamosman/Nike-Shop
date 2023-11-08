@@ -3,3 +3,4 @@ show nike_detail in base
 stars in nike_list
 for comment in blog detail+comment number
 add paginat to the blog.html
+views in Blog
