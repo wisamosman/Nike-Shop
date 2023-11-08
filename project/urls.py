@@ -22,6 +22,7 @@ from settings.views import home
 
 urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/',include('accounts.urls')),
     path('admin/', admin.site.urls),
     path('nike/', include('nike.urls',namespace='nike')),
     path('settings/', include('settings.urls',namespace='settings')),
