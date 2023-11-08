@@ -7,17 +7,6 @@ from nike.models import Nike,Review
 from django.contrib.admin.views.decorators import staff_member_required
 
 
-
-
-
-
-
-
-
-
-
-
-
 def signup(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)
