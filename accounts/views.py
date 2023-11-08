@@ -2,8 +2,21 @@ from django.shortcuts import render,redirect
 from .models import Profile,Phones,Address
 from .forms import SignupForm, ActivateUser
 from django.contrib.auth.models import User
+from django.views import generic
+from nike.models import Nike,Review
+from django.contrib.admin.views.decorators import staff_member_required
 
-# Create your views here.
+
+
+
+
+
+
+
+
+
+
+
 
 def signup(request):
     if request.method == 'POST':
@@ -17,3 +30,7 @@ def signup(request):
         form = SignupForm()
 
     return render(request,'registration/signup.html',{'form':form})            
+
+
+
+
