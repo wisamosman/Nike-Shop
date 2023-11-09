@@ -23,11 +23,12 @@
         <div class="container">
             <div class="returning_customer">
                 <div class="check_title">
-                    <h2>Returning Customer? <a href="#">Click here to login</a></h2>
+                    <h2>Returning Customer? <a href="/accounts/login">Click here to login</a></h2>
                 </div>
                 <p>If you have shopped with us before, please enter your details in the boxes below. If you are a new
                     customer, please proceed to the Billing & Shipping section.</p>
                 <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                    {% csrf_token %}
                     <div class="col-md-6 form-group p_star">
                         <input type="text" class="form-control" id="name" name="name">
                         <span class="placeholder" data-placeholder="Username or Email"></span>
@@ -42,7 +43,7 @@
                             <input type="checkbox" id="f-option" name="selector">
                             <label for="f-option">Remember me</label>
                         </div>
-                        <a class="lost_pass" href="#">Lost your password?</a>
+                        <a class="lost_pass" href="/accounts/password_reset">Lost your password?</a>
                     </div>
                 </form>
             </div>
@@ -60,22 +61,22 @@
                         <form class="row contact_form" action="#" method="post" novalidate="novalidate">
                             <div class="col-md-6 form-group p_star">
                                 <input type="text" class="form-control" id="first" name="name">
-                                <span class="placeholder" data-placeholder="First name"></span>
+                                <span class="placeholder" data-placeholder="{{request.user}}"></span>
                             </div>
                             <div class="col-md-6 form-group p_star">
                                 <input type="text" class="form-control" id="last" name="name">
                                 <span class="placeholder" data-placeholder="Last name"></span>
                             </div>
                             <div class="col-md-12 form-group">
-                                <input type="text" class="form-control" id="company" name="company" placeholder="Company name">
+                                <input type="text" class="form-control" id="company" name="company" placeholder="{{company_data.subtitle}}">
                             </div>
                             <div class="col-md-6 form-group p_star">
                                 <input type="text" class="form-control" id="number" name="number">
-                                <span class="placeholder" data-placeholder="Phone number"></span>
+                                <span class="placeholder" data-placeholder="Phone number">{{request.user.user_phones.phone}}</span>
                             </div>
                             <div class="col-md-6 form-group p_star">
                                 <input type="text" class="form-control" id="email" name="compemailany">
-                                <span class="placeholder" data-placeholder="Email Address"></span>
+                                <span class="placeholder" data-placeholder="{{request.user.email}}"></span>
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <select class="country_select">

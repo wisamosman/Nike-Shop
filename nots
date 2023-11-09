@@ -4,3 +4,4 @@ stars in nike_list
 for comment in blog detail+comment number
 add paginat to the blog.html
 views in Blog
+checkout html {{request.user.user_phones.phone}}
