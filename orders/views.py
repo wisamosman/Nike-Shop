@@ -73,19 +73,21 @@ def add_to_cart(request):
     cart = Cart.objects.get(user=request.user,completed=False)
 
     # cart detail 
-    cart_detail  , created = CartDetail.objects.get_or_create(cart=cart , product=product)
+    cart_detail  , created = CartDetail.objects.get_or_create(cart=cart , nike=nike)
     cart_detail.quantity = qauntity
     cart_detail.price = nike.price
     cart_detail.total = round(int(qauntity) * nike.price,2)
     cart_detail.save()
 
-    cart = Cart.objects.get(user=request.user,completed=False)
-    detail = CartDetail.objects.filter(cart=cart)
+    return redirect(f'/nike/{nike.slug}')
 
-    total = f"{cart.cart_total()}$"
+    #cart = Cart.objects.get(user=request.user,completed=False)
+    #detail = CartDetail.objects.filter(cart=cart)
 
-    html = render_to_string('include/base_sidebar.html',{'cart_data':cart, 'cart_detail_data':detail, request:request})
-    return JsonResponse({'result':html ,'total':total})
+    #total = f"{cart.cart_total()}$"
+
+    #html = render_to_string('include/base_sidebar.html',{'cart_data':cart, 'cart_detail_data':detail, request:request})
+    #return JsonResponse({'result':html ,'total':total})
     # # cart detail 
     # cart_detail  , created = CartDetail.objects.get_or_create(cart=cart , product=product)
     # if created : 

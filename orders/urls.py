@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import add_to_cart, OrderList,chackout_page
-from .models import Order,OrderDetail,Cart,CartDetail,Coupon
+from .models import Order,OrderDetail,CartDetail,Cart,Coupon
 
 
 app_name = "orders"
