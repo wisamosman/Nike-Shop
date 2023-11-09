@@ -66,7 +66,7 @@ def chackout_page(request):
 def add_to_cart(request):
 
     # get data frontend 
-    nike = Nike.objects.get(id=request.POST['product_id'])
+    nike = Nike.objects.get(id=request.POST['nike_id'])
     qauntity = request.POST['quantity']
 
     # get cart
