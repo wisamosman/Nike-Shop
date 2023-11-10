@@ -13,5 +13,5 @@ class NikeList(generic.ListView):
 
 
 
-class NikeDetail(generic.DeleteView):
+class NikeDetail(generic.DetailView):
     model = Nike    

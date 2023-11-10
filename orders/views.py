@@ -8,11 +8,17 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 import datetime
 from django.http import JsonResponse
 from django.template.loader import render_to_string
+from django.views import generic
 
 
 
 class OrderList(LoginRequiredMixin,ListView):
     model = Order
+
+    def get_queryset(self):
+        order_detail =  order_detail.objects.all()
+        queryset = OrderDetail.objects.all()
+        return queryset
     
 
     def get_queryset(self):
@@ -20,7 +26,8 @@ class OrderList(LoginRequiredMixin,ListView):
         queryset = queryset.filter(user=self.request.user)
         return queryset
 
-
+class OrderDetail(generic.DetailView):
+    model = Order
 
 def chackout_page(request):
     cart = Cart.objects.get(user=request.user , completed=False)

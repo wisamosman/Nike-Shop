@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import add_to_cart, OrderList,chackout_page
+from .views import add_to_cart, OrderList,chackout_page,OrderDetail
 from .models import Order,OrderDetail,CartDetail,Cart,Coupon
 
 

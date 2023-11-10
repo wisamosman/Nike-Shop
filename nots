@@ -6,3 +6,4 @@ add paginat to the blog.html
 views in Blog
 checkout html {{request.user.user_phones.phone}}
 add to Cart
+{{object.order_detail.price}}in order_list
