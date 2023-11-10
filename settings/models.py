@@ -12,6 +12,9 @@ class Company(models.Model):
     android_link = models.URLField(null=True,blank=True)
     appstore_link = models.URLField(null=True,blank=True)
     about_us = models.TextField(max_length=500)
+    street = models.TextField(max_length=20)
+    post_code = models.IntegerField(default=1)
+    city = models.TextField(max_length=20)
 
 
     def __str__(self):

@@ -105,3 +105,16 @@ def add_to_cart(request):
     # cart_detail.price = product.price
     # cart_detail.total = int(qauntity) * product.price
     # cart_detail.save()
+
+
+
+def confirmation(request):
+    cart = Cart.objects.all()
+    cart_detail = CartDetail.objects.all()
+    
+
+    return render(request, 'orders/order-detail.html',{
+        'cart':Cart,
+        'cart_detail':CartDetail
+
+    })
