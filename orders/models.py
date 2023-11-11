@@ -19,7 +19,12 @@ class Order(models.Model):
 
     def __str__(self):
         return self.code
-
+    
+    def order_total(self):
+        total = 0
+        for nike in self.order_detail.all():
+            total += nike.total
+        return round(total,2)
 
 
 
