@@ -6,6 +6,7 @@ from .models import Blog
 
 class BlogList(generic.ListView):
     model = Blog
+    paginate_by = 2
     
 
 

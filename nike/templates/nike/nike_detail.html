@@ -308,11 +308,11 @@
 										</div>
 										<div class="media-body">
 											<h4>{{review.user}}</h4>
-											<i class="fa fa-{% if nike.get_avg_rate.avg > 0 %}star{% endif %}"></i>
-											<i class="fa fa-{% if nike.get_avg_rate.avg > 1 %}star{% endif %}"></i>
-											<i class="fa fa-{% if nike.get_avg_rate.avg > 2 %}star{% endif %}"></i>
-											<i class="fa fa-{% if nike.get_avg_rate.avg > 3 %}star{% endif %}"></i>
-											<i class="fa fa-{% if nike.get_avg_rate.avg > 4 %}star{% endif %}"></i>
+											<i class="fa fa-{% if revie.rate > 0 %}star{% endif %}"></i>
+											<i class="fa fa-{% if revie.rate > 1 %}star{% endif %}"></i>
+											<i class="fa fa-{% if revie.rate > 2 %}star{% endif %}"></i>
+											<i class="fa fa-{% if revie.rate > 3 %}star{% endif %}"></i>
+											<i class="fa fa-{% if revie.rate > 4 %}star{% endif %}"></i>
 										</div>
 									</div>
 									<p>{{review.comment}}</p>
