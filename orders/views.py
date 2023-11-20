@@ -47,7 +47,6 @@ def chackout_page(request):
                 cart.save()
                 html = render_to_string('include/checkout_table.html',{
                 'cart_detail':cart_detail , 
-                 
                 'sub_total': round(sub_total,2) , 
                 'total': round(total,2) , 
                 'discount': round(code_value,2) , 
@@ -62,7 +61,6 @@ def chackout_page(request):
 
     return render(request,'orders/checkout.html',{
         'cart_detail':cart_detail , 
-     
         'sub_total': sub_total , 
         'total': total , 
         'discount': discount
